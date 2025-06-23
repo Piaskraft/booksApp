@@ -17,21 +17,21 @@
 
       <!-- FILTERS FORM -->
       <section class="filters">
-        <form>
+        <h2 id="filter-label" class="visually-hidden">Filter books</h2>
+        <div role="group" aria-labelledby="filter-label">
           <label>
             Adults only: <input name="filter" value="adults" type="checkbox">
           </label>
           <label>
             Non-fiction: <input name="filter" value="nonFiction" type="checkbox">
           </label>
-        </form>
+        </div>
       </section>
 
       <!-- BOOKS PANEL -->
       <section class="books-panel">
         <h1>Your collection</h1>
-        <ul class="books-list">
-        </ul>
+        <ul class="books-list"></ul>
       </section>
     </div>
   </main>
@@ -39,7 +39,6 @@
   <!-- BOOK TEMPLATE -->
   <script id="template-book" type="text/x-handlebars-template">
     <li class="book">
-
       <!-- title and price -->
       <header class="book__header">
         <h2 class="book__name">{{ name }}</h2>
@@ -49,19 +48,16 @@
       <!-- cover image -->
       <a href="#" class="book__image" data-id="{{ id }}">
         <figure>
-          <img src="{{ image }}" alt="{{ name }}">
+          <img src="{{ image }}" alt="{{ name }}" />
         </figure>
       </a>
 
       <!-- ratings -->
       <div class="book__rating">
-       <div class="book__rating__fill" style="width: {{ ratingWidth }}%; background: {{ ratingBgc }}">
-  {{ rating }}/10
-</div>
-
+        <div class="book__rating__fill" style="width: {{ ratingWidth }}%; background: {{ ratingBgc }}">
+          {{ rating }}/10
+        </div>
       </div>
-
-
     </li>
   </script>
 
